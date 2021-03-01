@@ -43,14 +43,14 @@ Route::get('message/find',function(){
 
 });
 
-Route::get('post/add', function(){
+Route::get('post/create', function(){
     DB::table('posts')->insert([
         'title' => 'What is repository?',
         'body' => 'A software repository, or “repo” for short, is a storage location for software packages.',
     ]);
 });
 
-Route::get('post/find',function(){
+Route::get('post',function(){
     $post = Post::find(1);
     return $post;
     //return $message->name;
