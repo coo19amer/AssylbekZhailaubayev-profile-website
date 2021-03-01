@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+
+use App\Models\Message;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +26,18 @@ Route::get('/message', function () {
     return view('message');
 })->name('message');
 
+Route::get('message/add', function(){
+    DB::table('message')->insert([
+        'name' => 'Assylbek',
+        'email' => 'coo19amer@gmail.com',
+        'topic' => 'Working on project',
+        'message' => 'What is the repository of project?'
+    ]);
+});
+
+Route::get('message/find',function(){
+    $message = Message::find(1);
+    return $message;
+    //return $message->name;
+
+});
