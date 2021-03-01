@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 
 use App\Models\Message;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,20 @@ Route::get('message/add', function(){
 Route::get('message/find',function(){
     $message = Message::find(1);
     return $message;
+    //return $message->name;
+
+});
+
+Route::get('post/add', function(){
+    DB::table('posts')->insert([
+        'title' => 'What is repository?',
+        'body' => 'A software repository, or “repo” for short, is a storage location for software packages.',
+    ]);
+});
+
+Route::get('post/find',function(){
+    $post = Post::find(1);
+    return $post;
     //return $message->name;
 
 });
