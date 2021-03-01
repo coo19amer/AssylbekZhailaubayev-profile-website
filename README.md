@@ -60,3 +60,11 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+This project was created by Laravel framework and after opening it, firstly we get into the "Home" page
+![](images/home.png)
+In the home page we can choose from two routes where we want to go, if click on about button then about page is opened
+![](images/about.png)
+In other case, if we click on message button then contact page is opened
+![](images/message.png)
