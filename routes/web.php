@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Message;
 use App\Models\Post;
 
+use App\Http\Controllers\BlogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,16 +44,16 @@ Route::get('message/find',function(){
 
 });
 
-Route::get('post/create', function(){
+Route::get('post/add', function(){
     DB::table('posts')->insert([
-        'title' => 'What is repository?',
-        'body' => 'A software repository, or “repo” for short, is a storage location for software packages.',
+        'title' => 'Lorem ipsum dolor sit amet.',
+        'body' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores, dolorem!',
     ]);
 });
 
 Route::get('post',function(){
     $post = Post::find(1);
     return $post;
-    //return $message->name;
-
 });
+
+Route::get('blog', [BlogController::class,'index']);
