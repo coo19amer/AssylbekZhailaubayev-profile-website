@@ -7,6 +7,9 @@ use App\Models\Message;
 use App\Models\Post;
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\UploadController;
+use App\Http\Controllers\LocalizationController;
+use App\Http\Controllers\MailController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,7 +59,7 @@ Route::get('post',function(){
     return $post;
 });
 
-Route::get('blog', [BlogController::class,'index']);
+Route::get('blog/index', [BlogController::class,'index']);
 Route::get('blog/create', function(){
     return view('blog.create');
 });
@@ -64,3 +67,19 @@ Route::get('blog/create', function(){
 Route::post('blog/create',[BlogController::class, 'store'])->name('add-post');
 
 Route::get('post/{id}', [BlogController::class, 'get_post']);
+
+Route::get('user', function(){
+    return view('user');
+});
+
+Route::view('upload', 'user');
+Route::post('upload',[UploadController::class,'index']);
+
+Route::get('/index/{lang}', function ($lang) {
+    App::setlocale($lang);
+    return view('index');
+}) ;
+
+Route::get('/{lang}', [LocalizationController::class,'index']);
+
+Route::get('mail/send', [MailController::class,'send']);

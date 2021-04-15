@@ -1,0 +1,18 @@
+{
+    "Full Name" : "Полное имя",
+	"Email":"Имейл",
+	"Phone" : "Номер телефона",
+	"Mobile" : "Номер мобильного телефона",
+	"Address" : "Адрес",
+	"Assylbek Zhailaubayev" : "Асылбек Жайлаубаев",
+	"Student at SDU": "Студент в СДУ",
+	"Shymkent" : "Шымкент",
+	"Follow": "Следовать",
+	"Language" : "Знание",
+	"User Profile" : "Профиль пользователя",
+	"Home" : "Домой",
+	"Project Status" : "Статус проекта",
+	"Knowledge" : "Языков",
+    "Message" : "Сообщить"
+
+}
